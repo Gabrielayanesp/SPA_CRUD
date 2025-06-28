@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Poppins:wght@700&display=swap');
+
+:root {
+    --color_fondo: #dceeff;
+    --color_principal: #1e3a8a;
+    --color_secundario: #a7c7e7;
+    --color_extra: #ffffff;
+    --color_titulo: #0ea5e9;
+    --sombra: rgba(0, 0, 0, 0.1);
+    --fuente_general: 'Comic Neue', cursive;
+    --fuente_titulo: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente_general);
+}
+
+body {
+    background-color: var(--color_secundario);
+}
+
+.div-title h1 {
+    font-family: var(--fuente_titulo);
+    font-size: 3.5em;
+    text-shadow: 2px 2px var(--sombra);
+    font-weight: 700;
+    text-align: center;
+    color: var(--color_principal);
+    font-family: var(--fuente_titulo);
+}
+
+.container {
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Inventory system form*/
+.div-form,
+.div-list {
+    background-color: var(--color_fondo);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px var(--sombra);
+    padding: 20px;
+    width: 400px;
+    min-height: 350px;
+}
+
+/* Styles for the header inside the form */
+.div-form h2,
+.div-list h2 {
+    font-family: var(--fuente_titulo);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2em;
+    color: var(--color_principal);
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Styles for inputs and buttons */
+form input,
+form button {
+    width: 80%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+}
+
+form input {
+    background-color: var(--color_extra);
+    color: var(--color_principal);
+}
+
+form button {
+    background-color: var(--color_principal);
+    color: var(--color_extra);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+form button:hover {
+    background-color: #102653;
+    transform: scale(1.05);
+}
+
+/* STYLE LIST*/
+.div-inventory {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Styles for the header within the inventory list */
+.div-inventory p {
+    background-color: var(--color_extra);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--color_principal);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+/* Edit and delete button styles */
+.btn {
+    padding: 6px 12px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    color: var(--color_extra);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-edit {
+    background-color: #2563eb;
+}
+
+.btn-delete {
+    background-color: #1e40af;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .div-form,
+    .div-list {
+        width: 90%;
+        min-height: auto;
+    }
+
+    .div-title h1 {
+        font-size: 2em;
+        padding: 0 10px;
+    }
+
+    form input,
+    form button {
+        width: 90%;
+    }
+
+    .div-inventory p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .btn {
+        margin-top: 5px;
+    }
+}
